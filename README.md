@@ -1,8 +1,8 @@
 # virtual-titration-lab
 
-An interactive titration simulator built on **real acid–base chemistry** — not
-hard-coded curves. You choose an acid, a base, and an indicator, and the engine
-computes the pH at every drop the way it actually behaves in the flask.
+An interactive titration simulator built on **real acid–base chemistry**.
+You choose an acid, a base, and an indicator, and the engine computes the 
+pH at every drop the way it actually behaves in the flask.
 
 > **Status: early / work in progress.** Right now this is just the chemistry
 > engine — the pH-calculation core and its supporting data (compounds and
@@ -27,6 +27,7 @@ computes the pH at every drop the way it actually behaves in the flask.
 - Dripping the titrant in and drawing the live pH curve
 - Live indicator colour change in a flask
 - An interactive front end
+- Adapting the chemistry for polyprotic acids/bases
 
 ## How the chemistry works
 
@@ -106,7 +107,7 @@ print(titration_pH(acids['CH3COOH'], 0.1, 0.025, bases['NaOH'], 0.1, 0.0125))
 "
 ```
 
-Volumes are in **litres** and concentrations in **mol/L**.
+Volumes are in **dm^3** and concentrations in **mol/dm^3**.
 
 ## License
 
