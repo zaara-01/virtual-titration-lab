@@ -21,7 +21,7 @@ AcOH = acids["CH3COOH"]
 NaOH = bases["NaOH"]
 NH3 = bases["NH3"]
 
-V = 0.025   # 25 mL in the flask, in litres
+V = 0.025   # 25 cm^3 in the flask, in dm^3
 TOL = 0.03  # pH tolerance for the comparisons
 
 

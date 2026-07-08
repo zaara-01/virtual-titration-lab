@@ -101,7 +101,7 @@ cd engine
 python3 -c "
 from pH_calculations import titration_pH
 from compounds import acids, bases
-# 12.5 mL of 0.1 M NaOH into 25 mL of 0.1 M acetic acid:
+# 12.5 cm^3 of 0.1 M NaOH into 25 cm^3 of 0.1 M acetic acid:
 print(titration_pH(acids['CH3COOH'], 0.1, 0.025, bases['NaOH'], 0.1, 0.0125))
 "
 ```
