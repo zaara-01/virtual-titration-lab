@@ -1,3 +1,8 @@
+"""
+Defines dictionaries of acids and bases with their properties.
+Currently, only monoprotic and monohydroxy acids and bases are supported.
+"""
+
 class Acid:
     def __init__(self, name, formula, strength, molar_mass, Ka=None):
         self.name = name
@@ -16,9 +21,8 @@ class Base:
 
 acids = {}
 acids["HCl"] = Acid("Hydrochloric acid", "HCl", "strong", 36.5)
-acids["H2SO4"] = Acid("Sulfuric acid", "H2SO4", "strong", 98.1)
 acids["HNO3"] = Acid("Nitric acid", "HNO3", "strong", 63.0)
-acids["CH3COOH"] = Acid("Ethanoic acid", "CH3COOH", "weak", 60.0, 1.74e-5)
+acids["CH3COOH"] = Acid("Ethanoic acid", "CH3COOH", "weak", 60.0, 1.75e-5)
 
 bases = {}
 bases["NaOH"] = Base("Sodium hydroxide", "NaOH", "strong", 40.0)

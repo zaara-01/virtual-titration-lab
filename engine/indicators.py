@@ -1,4 +1,10 @@
 
+"""
+This module models acid-base indicators and computes the colour one shows at a given pH.
+Each indicator is treated as a weak acid with a known pKa value, and the colour is determined by the ratio of the acid and base forms at the given pH.
+color_at_pH(pH) returns a hex color code representing the colour of the indicator at the specified pH so the colour shifts gradually through the transition.
+"""
+
 def blend_hex_colors(color1, color2, ratio):
     color1 = color1.lstrip('#')
     color2 = color2.lstrip('#')
@@ -25,7 +31,7 @@ class Indicator:
     
     def color_at_pH(self, pH):
         ratio = 10 ** (pH - self.pKa)
-        fraction = ratio / (1 + ratio)
+        fraction = ratio / (1 + ratio) # Here, fraction represents the proportion of the base form of the indicator at the given pH.
         return blend_hex_colors(self.acid_color, self.base_color, fraction)
 
 indicators = {}
