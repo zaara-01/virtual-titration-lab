@@ -16,3 +16,6 @@ env/
 # Editors
 .vscode/
 .idea/
+
+# Local-only prototype (kept off GitHub)
+prototype/lab_example.py

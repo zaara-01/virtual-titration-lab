@@ -1,5 +1,5 @@
 """
-Defines dictionaries of acids and bases with their properties.
+This module defines dictionaries of acids and bases with their properties.
 Currently, only monoprotic and monohydroxy acids and bases are supported.
 """
 

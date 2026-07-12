@@ -4,9 +4,9 @@ An interactive titration simulator built on **real acid–base chemistry**.
 You choose an acid, a base, and an indicator, and the engine computes the 
 pH at every drop the way it actually behaves in the flask.
 
-> **Status: early / work in progress.** Right now this is just the chemistry
-> engine — the pH-calculation core and its supporting data (compounds and
-> indicators). The interactive simulation and UI are still to come.
+> **Status: work in progress.** The chemistry engine — the pH-calculation core
+> and its supporting data (compounds and indicators) — is complete. The game
+> itself is currently being programmed; the interactive UI is still to come.
 
 ## What works today
 
@@ -21,13 +21,23 @@ pH at every drop the way it actually behaves in the flask.
   continuous blend between its acid and base colours, based on pH.
 - **Tests** (`tests/test_ph.py`) — the engine is checked against known textbook
   pH values.
+- **Game logic** (`game.py`) — a `TitrationGame` class that runs a full
+  titration on top of the engine: it drips titrant in drop by drop, tracks the
+  pH and the indicator's colour at every step, and records the curve. Driven in
+  code for now (the runnable interface is being built). Two modes:
+  - **Challenge** — a hidden random concentration to find, with titre recording,
+    concordance checking, and answer marking.
+  - **Sandbox** — freely chosen acid, base, indicator, and concentrations, with
+    the whole pH curve captured as you drip.
+  - Includes burette mechanics (50 cm^3 capacity with refill).
 
 ## Still to come
 
-- Dripping the titrant in and drawing the live pH curve
-- Live indicator colour change in a flask
-- An interactive front end
-- Adapting the chemistry for polyprotic acids/bases
+- A **graphical interface** — the flask, burette, live pH curve, and colour
+  change drawn on screen
+- *(in progress)* a **text-based prototype** to lock down the interaction flow
+  before building the GUI
+- Adapting the chemistry for **polyprotic** acids and bases
 
 ## How the chemistry works
 
@@ -95,7 +105,7 @@ Requires only Python 3 (standard library — nothing to install).
 
 ```bash
 # run the tests
-python3 tests/test_ph.py     # or: pytest
+python3 tests/test_ph.py
 
 # use the engine
 cd engine

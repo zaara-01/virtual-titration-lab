@@ -1,3 +1,14 @@
+"""
+The pH engine -- computes the pH at any point in an acid-base titration.
+
+it uses a single charge-balance equation: a solution must be electrically neutral, 
+so the positive ions must equal the negative ions. This is what keeps the result 
+correct right at the equivalence point, where region-based formulas break down.
+
+Handles strong/weak monoprotic acids and monohydroxy bases (weak species carry
+a Ka/Kb; strong species are treated as fully ionized).
+"""
+
 import math
 from compounds import Acid, Base, acids, bases
 
